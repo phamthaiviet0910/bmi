@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Chỉ số BMI của bạn là: <span id="bmi"></span></p>
+    <p>Bạn thuộc dạng: <span id="body-type"></span></p>
+
+    <script>
+        var bmi = document.getElementById('bmi');
+        var bodyType = document.getElementById('body-type');
+
+        var weight = +prompt('Nhập cân nặng của bạn tại đây (kg)');
+        var height = +prompt('Nhập chiều cao của bạn tại đây (m)');
+
+        var bmiIndex = weight / (Math.pow(height, 2));
+
+        bmi.innerText = bmiIndex;
+
+        if (bmiIndex < 16){
+            bodyType.innerText = "Gầy độ III"
+        } else if (bmiIndex >= 16 && bmiIndex < 17){
+            bodyType.innerText = "Gầy độ II"
+        } else if (bmiIndex >= 17 && bmiIndex < 18.5){
+            bodyType.innerText = "Gầy độ I"
+        } else if (bmiIndex >= 18.5 && bmiIndex < 25){
+            bodyType.innerText = "Bình thường"
+        } else if (bmiIndex >= 25 && bmiIndex < 30){
+            bodyType.innerText = "Thừa cân"
+        } else if (bmiIndex >= 30 && bmiIndex < 35){
+            bodyType.innerText = "Béo phì độ I"
+        } else if (bmiIndex >= 35 && bmiIndex < 40){
+            bodyType.innerText = "Béo phì độ II"
+        } else {
+            bodyType.innerText = "Béo phì độ III"
+        }
+    </script>
+</body>
+</html>
